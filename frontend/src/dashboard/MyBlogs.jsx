@@ -3,13 +3,15 @@ import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 
+
 function MyBlogs() {
   const [myBlogs, setMyBlogs] = useState([]);
+   const BASE_URL = import.meta.env.VITE_API_URL;
   useEffect(() => {
     const fetchMyBlogs = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:4001/api/blogs/my-blog",
+          `${BASE_URL}/api/blogs/my-blog`,
           { withCredentials: true }
         );
         console.log(data);
@@ -23,7 +25,7 @@ function MyBlogs() {
 
   const handleDelete = async (id) => {
     await axios
-      .delete(`http://localhost:4001/api/blogs/delete/${id}`, {
+      .delete(`${BASE_URL}/api/blogs/delete/${id}`, {
         withCredentials: true,
       })
       .then((res) => {

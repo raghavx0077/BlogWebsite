@@ -40,8 +40,9 @@ function Register() {
     formData.append("education", education);
     formData.append("photo", photo);
     try {
+       const BASE_URL = import.meta.env.VITE_API_URL;
       const { data } = await axios.post(
-        "http://localhost:4001/api/users/register",
+        `${BASE_URL}/api/users/register`,
         formData,
         {
           withCredentials: true,

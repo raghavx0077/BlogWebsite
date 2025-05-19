@@ -30,8 +30,9 @@ function CreateBlog() {
 
     formData.append("blogImage", blogImage);
     try {
+       const BASE_URL = import.meta.env.VITE_API_URL;
       const { data } = await axios.post(
-        "http://localhost:4001/api/blogs/create",
+        `${BASE_URL}/api/blogs/create`,
         formData,
         {
           withCredentials: true,

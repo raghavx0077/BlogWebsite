@@ -25,11 +25,13 @@ function UpdateBlog() {
     };
   };
 
+   const BASE_URL = import.meta.env.VITE_API_URL;
+
   useEffect(() => {
     const fetchBlog = async () => {
       try {
         const { data } = await axios.get(
-          `http://localhost:4001/api/blogs/single-blog/${id}`,
+          `${BASE_URL}/api/blogs/single-blog/${id}`,
 
           {
             withCredentials: true,
@@ -61,7 +63,7 @@ function UpdateBlog() {
     formData.append("blogImage", blogImage);
     try {
       const { data } = await axios.put(
-        `http://localhost:4001/api/blogs/update/${id}`,
+        `${BASE_URL}/api/blogs/update/${id}`,
         formData,
         {
           withCredentials: true,

@@ -8,6 +8,8 @@ export const AuthProvider = ({ children }) => {
   const [profile, setProfile] = useState();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
+   const BASE_URL = import.meta.env.VITE_API_URL;
+
   useEffect(() => {
     const fetchProfile = async () => {
       try {
@@ -16,7 +18,7 @@ export const AuthProvider = ({ children }) => {
         console.log(token);
         if (token) {
           const { data } = await axios.get(
-            "http://localhost:4001/api/users/my-profile",
+             `${BASE_URL}/api/users/my-profile`,
             {
               withCredentials: true,
               headers: {
@@ -36,7 +38,7 @@ export const AuthProvider = ({ children }) => {
     const fetchBlogs = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:4001/api/blogs/all-blogs",
+          `${BASE_URL}/api/blogs/all-blogs`,
           { withCredentials: true }
         );
         console.log(data);

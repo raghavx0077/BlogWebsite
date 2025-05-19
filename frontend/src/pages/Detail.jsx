@@ -10,8 +10,9 @@ function Detail() {
   useEffect(() => {
     const fetchblogs = async () => {
       try {
+         const BASE_URL = import.meta.env.VITE_API_URL;
         const { data } = await axios.get(
-          `http://localhost:4001/api/blogs/single-blog/${id}`,
+          `${BASE_URL}/api/blogs/single-blog/${id}`,
 
           {
             withCredentials: true,

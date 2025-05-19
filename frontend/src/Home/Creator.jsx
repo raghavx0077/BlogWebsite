@@ -6,8 +6,9 @@ function Creator() {
   console.log(admin);
   useEffect(() => {
     const fetchAdmins = async () => {
+       const BASE_URL = import.meta.env.VITE_API_URL;
       const { data } = await axios.get(
-        "http://localhost:4001/api/users/admins",
+        `${BASE_URL}/api/users/admins`,
         {
           withCredentials: true,
         }
