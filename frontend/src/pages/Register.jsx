@@ -78,7 +78,7 @@ function Register() {
         <div className="w-full max-w-md bg-white shadow-md rounded-lg p-8">
           <form onSubmit={handleRegister}>
             <div className="font-semibold text-xl items-center text-center">
-              Cilli<span className="text-blue-500">Blog</span>
+              Blog<span className="text-blue-500">Pedia</span>
             </div>
             <h1 className="text-xl font-semibold mb-6">Register</h1>
             <select
@@ -135,7 +135,7 @@ function Register() {
               <option value="BCA ">BCA</option>
               <option value="MCA ">MCA</option>
               <option value="MBA ">MBA</option>
-              <option value="BBA ">BBA</option>
+              <option value="Btech ">Btech</option>
             </select>
             <div className="flex items-center mb-4">
               <div className="photo w-20 h-20 mr-4">

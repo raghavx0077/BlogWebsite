@@ -17,13 +17,16 @@ const MONOGO_URL = process.env.MONOG_URI;
 //middleware
 app.use(express.json());
 app.use(cookieParser());
+const FRONTEND_URL = process.env.FRONTEND_URL;
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL,
+    origin:FRONTEND_URL ,
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
   })
 );
+console.log(`Frontend URL: ${FRONTEND_URL}`);
+
 
 app.use(
   fileUpload({
